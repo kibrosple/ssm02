@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.RoleMapper">
+    <!--通过user的id查找角色-->
+    <select id="findUserById" resultType="role">
+        SELECT  * from ROLE where ID in (SELECT ROLEID FROM USERS_ROLE where USERID =#{uid})
+    </select>
+
+</mapper>

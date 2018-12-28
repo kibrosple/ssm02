@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.MemberMapper">
+    <!--通过会员id找到会员-->
+    <select id="findById" resultType="member" parameterType="String">
+        select * from MEMBER where ID =#{Id}
+    </select>
+</mapper>

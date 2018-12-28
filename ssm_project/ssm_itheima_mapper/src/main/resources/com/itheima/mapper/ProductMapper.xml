@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.ProductMapper">
+    <!--查询所有产品-->
+    <select id="findAll" resultType="product">
+        SELECT * FROM PRODUCT
+    </select>
+
+    <!--插入产品-->
+    <insert id="saveProduct" parameterType="product">
+        insert into PRODUCT(productNum,productName,departureTime,cityName,productPrice,productStatus,productDesc) VALUES(#{productNum},#{productName},#{departureTime},#{cityName},#{productPrice},#{productStatus},#{productDesc})
+    </insert>
+
+    <!--通过id查找产品-->
+    <select id="findProductById" parameterType="String" resultType="product">
+        select * from PRODUCT where id=#{id}
+    </select>
+
+</mapper>
