@@ -19,12 +19,25 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+    /*查询所有用户*/
     @Override
     public List<UserInfo> findAll() throws Exception {
         return userMapper.findAll();
     }
+    /*保存用户*/
+    @Override
+    public void saveUser(UserInfo userInfo) throws Exception {
+        userMapper.saveUser(userInfo);
+    }
+    /*通过id查找用户*/
+    @Override
+    public UserInfo findUserById(String id) throws Exception {
+        UserInfo user = userMapper.findUserById(id);
+        return user;
+    }
 
     @Override
+    /*登录安全认证*/
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println(username);
         /*通过username找到userinfo对象*/
@@ -34,8 +47,10 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        User user = new User(userInfo.getUsername(),"{noop}"+userInfo.getPassword(),userInfo.getStatus()==0?false:true,
-                true,true,true,getRoles(userInfo.getRoles()));
+        User user = new User(userInfo.getUsername(),userInfo.getPassword(),
+                userInfo.getStatus()==0?false:true,
+                true,true,
+                true, getRoles(userInfo.getRoles()));
         /*将userinfo对象装入userdetailsservice中的user对象中*/
         return user;
     }

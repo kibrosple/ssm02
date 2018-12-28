@@ -10,11 +10,19 @@
     </resultMap>
     <!--查找所有用户-->
     <select id="findAll" resultMap="userMap">
-        SELECT  * from USERS;
+        SELECT  * from USERS
     </select>
-    <!--通过用户名查找用户-->
+    <!--通过username查找用户-->
     <select id="findByUserName" resultMap="userMap" parameterType="String">
         select * from USERS where USERNAME = #{username}
+    </select>
+    <!--保存用户-->
+    <insert id="saveUser" parameterType="UserInfo">
+        INSERT INTO USERS(email,username,password,phonenum,status) VALUES (#{email},#{username},#{password},#{phoneNum},#{status})
+    </insert>
+    <!--通过id查找用户-->
+    <select id="findUserById" parameterType="String" resultMap="userMap">
+        select * from users where id = #{id}
     </select>
 
 </mapper>
