@@ -156,7 +156,7 @@
 											<td class="text-center">
 
 												<a href="${pageContext.request.contextPath}/user/findUserById?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/pages/updateUser?id=${user.id}" class="btn bg-olive btn-xs">修改角色</a>
+												<a href="${pageContext.request.contextPath}/user/update?id=${user.id}" class="btn bg-olive btn-xs">修改用户</a>
 
 											</td>
 										</tr>

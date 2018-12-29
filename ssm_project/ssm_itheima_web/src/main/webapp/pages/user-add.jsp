@@ -91,7 +91,7 @@
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/user/saveUser"
+			<form action="${pageContext.request.contextPath}/user/updateUser"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -102,7 +102,7 @@
 
 						<div class="col-md-2 title">用户名称</div>
 						<div class="col-md-4 data">
-							<input type="text" class="form-control" name="username"
+							<input type="text" class="form-control" name="username" readonly="readonly"
 								placeholder="用户名称" value="">
 						</div>
 						<div class="col-md-2 title">密码</div>

@@ -37,6 +37,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void updateUser(UserInfo userInfo) throws Exception {
+        userMapper.updateUser(userInfo);
+
+    }
+
+    @Override
     /*登录安全认证*/
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         System.out.println(username);

@@ -12,4 +12,6 @@ public interface UserMapper {
     /*保存用户*/
     void saveUser(UserInfo userInfo)throws Exception;
     UserInfo findUserById(String id) throws Exception;
+
+    void updateUser(UserInfo userInfo)throws Exception;
 }

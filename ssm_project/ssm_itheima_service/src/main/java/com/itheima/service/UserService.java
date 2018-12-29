@@ -12,4 +12,6 @@ public interface UserService extends UserDetailsService {
     void saveUser(UserInfo userInfo)throws Exception;
     /*通过id查找用户*/
     UserInfo findUserById(String id) throws Exception;
+    /*修改用户*/
+    void updateUser(UserInfo userInfo)throws Exception;
 }

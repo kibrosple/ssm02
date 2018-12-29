@@ -24,5 +24,9 @@
     <select id="findUserById" parameterType="String" resultMap="userMap">
         select * from users where id = #{id}
     </select>
+    <!--修改用户-->
+    <update id="updateUser" parameterType="UserInfo">
+        UPDATE USERS SET EMAIL=#{email},PASSWORD=#{password},STATUS=#{status},PHONENUM=#{phoneNum} WHERE USERNAME=#{username}
+    </update>
 
 </mapper>
